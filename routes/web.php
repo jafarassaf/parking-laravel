@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\PlaceParkingController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,5 +29,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
     // D'autres routes d'administration...
 });
+
+Route::get('/places', [PlaceParkingController::class, 'index'])->name('places.index');
 
 require __DIR__.'/auth.php';

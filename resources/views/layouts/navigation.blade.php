@@ -16,6 +16,26 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                <!-- resources/views/layouts/navigation.blade.php -->
+<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+    <!-- ... Code existant ... -->
+
+    <!-- Liens de navigation -->
+    <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
+        <!-- Lien vers Dashboard -->
+        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+            {{ __('Dashboard') }}
+        </x-nav-link>
+
+        <!-- Nouveau lien vers Places -->
+        <x-nav-link :href="route('places.index')" :active="request()->routeIs('places.index')">
+            {{ __('Places de Parking') }}
+        </x-nav-link>
+    </div>
+
+    <!-- ... Suite du code existant ... -->
+</nav>
+
             </div>
 
             <!-- Settings Dropdown -->
